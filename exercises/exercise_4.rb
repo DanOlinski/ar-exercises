@@ -6,4 +6,19 @@ require_relative './exercise_3'
 puts "Exercise 4"
 puts "----------"
 
-# Your code goes here ...
+Store.create(name: "Surrey", annual_revenue: 224000, mens_apparel: false, womens_apparel: true)
+
+Store.create(name: "Whistler", annual_revenue: 1900000, mens_apparel: true, womens_apparel: false)
+
+Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: true, womens_apparel: true)
+
+@mens_stores = Store.where(womens_apparel: false)
+@womens_stores_bellow1M = Store.where(mens_apparel: false).where("annual_revenue<?", 1000000) #ans shouls be 1 store: Surrey
+
+puts @mens_stores.count
+puts @womens_stores_bellow1M.count
+
+@mens_stores.each {
+  |store| 
+  puts store.name
+}

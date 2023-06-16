@@ -47,7 +47,7 @@ You can work with the models with irb by running
 
 ## Exercises
 
-### Exercise 1: Create 3 stores
+### Exercise 1: Create 3 stores: bundle exec ruby exercises/exercise_1.rb
 
 1. Use Active Record's `create` class method multiple times to create 3 stores in the database:
 
@@ -57,19 +57,19 @@ You can work with the models with irb by running
 
 2. Output (`puts`) the number of the stores using ActiveRecord's `count` method, to ensure that there are three stores in the database.
 
-### Exercise 2: Update the first store
+### Exercise 2: Update the first store: bundle exec ruby exercises/exercise_2.rb
 
 1. Load the first store (with `id = 1`) from the database and assign it to an instance variable `@store1`.
 2. Load the second store from the database and assign it to `@store2`.
 3. Update the first store (`@store1`) instance in the database. (Change its name or something.)
 
-### Exercise 3: Delete the third store
+### Exercise 3: Delete the third store: bundle exec ruby exercises/exercise_3.rb
 
 1. Load the third store (into `@store3`) as you did the other two before.
 2. Using Active Record's `destroy` method, delete the store from the database.
 3. Verify that the store has been deleted by again outputting (`puts`ing) the `count` (as you did in Exercise 1.)
 
-### Exercise 4: Loading a subset of stores
+### Exercise 4: Loading a subset of stores: bundle exec ruby exercises/exercise_4.rb
 
 1. Borrowing and modifying the code from Exercise one, create 3 more stores:
 
@@ -81,13 +81,13 @@ You can work with the models with irb by running
 3. Loop through each of these stores and output their name and annual revenue on each line.
 4. Do another fetch but this time load stores that carry women's apparel and are generating less than $1M in annual revenue.
 
-### Exercise 5: Calculations
+### Exercise 5: Calculations: bundle exec ruby exercises/exercise_5.rb
 
 1. Output the total revenue for the entire company (all stores), using Active Record's `.sum` calculation method.
 2. On the next line, also output the average annual revenue for all stores.
 3. Output the number of stores that are generating $1M or more in annual sales. **Hint:** Chain together `where` and `size` (or `count`) Active Record methods.
 
-### Exercise 6: One-to-many association
+### Exercise 6: One-to-many association: bundle exec ruby exercises/exercise_6.rb
 
 We haven't used the Employee class (and employees table) at all yet. If you look at this table's column structure, you'll find that it has a `store_id` (integer) column. This is a column that identifies which store each employee belongs to. It points to the `id` (integer) column of their store.
 
@@ -98,7 +98,7 @@ Let's tell Active Record that these two tables are in fact related via the `stor
 3. Add some data into employees. Here's an example of one (note how it differs from how you create stores): `@store1.employees.create(first_name: "Khurram", last_name: "Virani", hourly_rate: 60)`
 4. Go ahead and create some more employees using the create method. You can do this by making multiple calls to create (like you have before.) No need to assign the employees to variables though. Create them through the `@store#` instance variables that you defined in previous exercises. Create a bunch under `@store1` (Burnaby) and `@store2` (Richmond). Eg: `@store1.employees.create(...)`.
 
-### Exercise 7: Validations for both models
+### Exercise 7: Validations for both models: bundle exec ruby exercises/exercise_7.rb
 
 1. Add validations to two models to enforce the following business rules:
 

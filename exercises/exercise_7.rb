@@ -9,6 +9,11 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
+Employee.validates :first_name, presence: true
+Employee.validates :hourly_rate, presence: true
+Employee.validates :store_id, presence: true
+
+
 print "Enter a store name: "
 store_name = gets.chomp
 new_store = Store.create(name: store_name)
